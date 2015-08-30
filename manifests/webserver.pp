@@ -21,6 +21,5 @@ class ttrss::webserver (
     port            => $port,
     override        => 'all',
     custom_fragment => 'AddType application/x-httpd-php .php',
-    require         => Apache::Fastcgi::Server['php'],
   }
 }
