@@ -6,7 +6,6 @@ class ttrss::webserver (
   include ::php
 
   class { '::apache': } ->
-  class { '::apache::mod::fastcgi': } ->
   ::apache::fastcgi::server { 'php':
     host       => '127.0.0.1:9000',
     timeout    => 15,
