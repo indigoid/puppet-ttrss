@@ -1,0 +1,17 @@
+{
+  "name": "jslee-ttrss",
+  "version": "0.1.0",
+  "author": "jslee",
+  "summary": "Deploy Tiny Tiny RSS",
+  "license": "Apache-2.0",
+  "source": "https://github.com/indigoid/puppet-ttrss.git",
+  "project_page": "https://github.com/indigoid/puppet-ttrss",
+  "issues_url": "https://github.com/indigoid/puppet-ttrss/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-apache","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-postgresql","version_requirement":">= 1.0.0"},
+    {"name":"mayflower-php","version_requirement":">= 3.4.1"}
+  ]
+}
+
