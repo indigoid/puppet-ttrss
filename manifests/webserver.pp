@@ -3,10 +3,10 @@ class ttrss::webserver (
   $docroot = '/opt/tt',
   $port    = 80,
 ) {
-  require ::apache
-  require ::apache::mod::fastcgi
-  require ::php
+  include ::php
 
+  class { '::apache': } ->
+  class { '::apache::mod::fastcgi': } ->
   ::apache::fastcgi::server { 'php':
     host       => '127.0.0.1:9000',
     timeout    => 15,
@@ -14,7 +14,7 @@ class ttrss::webserver (
     faux_path  => '/var/www/php.fcgi',
     fcgi_alias => '/php.fcgi',
     file_type  => 'application/x-httpd-php',
-  }
+  } ->
   ::apache::vhost { $vhost:
     docroot         => $docroot,
     default_vhost   => true,
