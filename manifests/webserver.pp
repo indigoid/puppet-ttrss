@@ -15,7 +15,7 @@ define ttrss::webserver::php (
     vhost           => $vhost,
     www_root        => $www_root,
     location        => '~ \.php$',
-    index_files     => $index_files
+    index_files     => $index_files,
     proxy           => undef,
     fastcgi         => $backend,
     fastcgi_script  => undef,
