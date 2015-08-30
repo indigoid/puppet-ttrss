@@ -17,7 +17,7 @@ class ttrss::webserver (
   }
   ::apache::vhost { $vhost:
     docroot         => $docroot,
-    default_vhost   => $vhost,
+    default_vhost   => true,
     port            => $port,
     override        => 'all',
     custom_fragment => 'AddType application/x-httpd-php .php',

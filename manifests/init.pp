@@ -1,6 +1,6 @@
 class ttrss {
   class { 'ttrss::webserver':
-    vhost => "tt.${::fqdn}",
+    vhost => "tt.${::domain}",
   }
   include ttrss::database
 }
