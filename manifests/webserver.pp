@@ -6,10 +6,7 @@ class ttrss::webserver (
   require ::apache
   require ::apache::mod::fastcgi
   require ::php
-  ::php::apache_vhost { 'tt':
-    vhost         => "tt.${::domain}",
-    serveraliases => [ $::fqdn ],
-  }
+
   ::apache::fastcgi::server { 'php':
     host       => '127.0.0.1:9000',
     timeout    => 15,
